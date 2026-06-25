@@ -1,0 +1,26 @@
+{
+  "Early Blight": {
+    "meaning": "Early blight is a fungal disease that affects tomato plants, causing dark brown lesions on the leaves and stems.",
+    "causes": "Caused by the fungus <i>Alternaria solani</i> under warm, moist conditions.",
+    "symptoms": "Dark, sunken spots on leaves and stems. Older leaves are affected first.",
+    "remedy": "Can be minimized by maintaining optimum growing conditions, including proper fertilization, irrigation, and management of other pests."
+  },
+  "Late Blight": {
+    "meaning": "Late blight is a severe fungal disease that rapidly destroys leaves, stems, and fruits, often appearing later in the growing season.",
+    "causes": "Caused by the fungus <i>Phytophthora infestans</i> under cool, wet conditions.",
+    "symptoms": "Water-soaked lesions on leaves and stems, dark brown lesions on fruits.",
+    "remedy": "Can be treated with fungicides, proper harvesting and storage practices, and eliminating infected plants."
+  },
+  "Leaf Mold": {
+    "meaning": "Leaf mold is a fungal disease that affects tomato plants, causing mold growth on the underside of leaves.",
+    "causes": "Caused by the fungus <i>Cladosporium fulvum</i>, thriving in humid, moist environments.",
+    "symptoms": "Yellowing of upper leaves, with grayish mold on the undersides, leading to leaf drop.",
+    "remedy": "Can be controlled by improving air circulation, reducing humidity, and applying fungicides."
+  },
+  "Healthy": {
+    "meaning": "Healthy tomato plant without any disease.",
+    "causes": "No disease present.",
+    "symptoms": "Normal plant appearance, with no unusual spots or wilting.",
+    "remedy": "No remedy required."
+  }
+}

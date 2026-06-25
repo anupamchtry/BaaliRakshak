@@ -1,0 +1,20 @@
+{
+  "Brown Rust": {
+    "meaning": "Brown Rust is a fungal disease that affects wheat plants, causing reddish-brown pustules on the leaves and stems.",
+    "causes": "Caused by the fungus <i>Puccinia triticina</i> under warm, humid conditions.",
+    "symptoms": "Small, reddish-brown pustules (uredinia) appear on the upper surface of leaves, leading to yellowing and drying of the affected areas.",
+    "remedy": "Can be minimized by planting resistant wheat varieties, using fungicides, and practicing crop rotation."
+  },
+  "Healthy": {
+    "meaning": "Healthy wheat plant without any disease.",
+    "causes": "No disease present.",
+    "symptoms": "Normal plant appearance, with no unusual spots or wilting.",
+    "remedy": "No remedy required."
+  },
+  "Yellow Rust": {
+    "meaning": "Yellow Rust is a fungal disease that affects wheat plants, causing yellow pustules on the leaves.",
+    "causes": "Caused by the fungus <i>Puccinia striiformis</i> under cooler, moist conditions.",
+    "symptoms": "Yellow-orange pustules appear in narrow stripes on the upper surface of leaves, leading to yellowing and reduced photosynthesis.",
+    "remedy": "Can be controlled with fungicides, planting resistant varieties, and practicing crop rotation."
+  }
+}

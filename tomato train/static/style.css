@@ -1,0 +1,390 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+#body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url(./p2.jpg); /* Make sure the image URL is correct */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; /* Allow the overlay to be positioned on top */
+  min-height: 100vh; /* Ensures section takes full height */
+  margin: 0;
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+
+#body::before {
+  content: "";
+  position: absolute; /* Make sure the overlay is positioned relative to #body */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 0; /* Keeps overlay behind the content */
+}
+
+#body * {
+  position: relative; /* Ensure all content inside the section is above the overlay */
+  z-index: 1;
+}
+
+h2 {
+  font-size: 50px;
+}
+.navbar {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.479);
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  opacity: 0.95;
+  top: 0;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 30px;
+  z-index: 1000;
+  h2 {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    align-self: center;
+    transition: color 0.4s ease-in-out;
+  }
+  h2:hover {
+    color: red;
+  }
+}
+
+#translateButton {
+  position: absolute;
+  top: 50%; /* Centers it vertically */
+  right: 20px; /* Positions it at the extreme right */
+  transform: translateY(-50%); /* Perfect vertical centering */
+  background-color: #ff5722;
+  border: 2px solid red;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+#translateButton:hover {
+  color: red;
+  border: 2px solid red;
+  background: white;
+}
+#translateButton:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(198, 49, 49, 0.6); 
+}
+
+#section {
+  margin: 60px auto 80px auto; /* Centering */
+  max-width: 800px;
+  background: transparent; /* No background color */
+  backdrop-filter: blur(10px); /* Pure blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  color: white;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+  a {
+    border-color: burlywood;
+    border: 2px solid;
+    padding: 10px 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-bottom: 100px;
+    color: burlywood;
+    transition: background 0.5s ease-in-out, border 0.5s ease-in-out,
+      color 0.5s ease-in-out;
+  }
+  a:hover {
+    background: burlywood;
+    color: white;
+    border: 2px solid burlywood;
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+
+.form-box {
+  width: 600px;
+}
+.file-upload-wrapper {
+  margin-top: 2rem;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+}
+.file-upload-wrapper::after {
+  content: attr(data-text);
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 10px 15px;
+  display: block;
+  width: calc(100% - 40px);
+  pointer-events: none;
+  z-index: 20;
+  height: 40px;
+  line-height: 40px;
+  color: #999;
+  border-radius: 5px 10px 10px 5px;
+  font-weight: 300;
+}
+.file-upload-wrapper::before {
+  content: "Upload";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  height: 60px;
+  background: gray;
+  color: #fff;
+  font-weight: 700;
+  z-index: 25;
+  font-size: 16px;
+  line-height: 60px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  pointer-events: none;
+  border-radius: 0 5px 5px 0;
+  transition: background 0.5s ease-in-out;
+}
+.file-upload-wrapper:hover::before {
+  background: green;
+}
+.file-upload-wrapper input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ! #################### PREDICTION LABEL ##################### */
+.app {
+  display: none; /* Hide by default */
+  margin-top: 2rem;
+  max-width: 700px;
+  /* background-color: rebeccapurple; */
+  padding: 30px 60px;
+  border-radius: 10px;
+  color: black;
+  img {
+    border: 2px solid cyan;
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+}
+.healthy-bg {
+  background-color: green;
+}
+.disease-bg {
+  background-color: rgba(247, 31, 31, 0.77);
+}
+.app-head {
+  font-size: 2rem;
+  color: white;
+}
+.app-show {
+  display: block !important; /* Show when necessary */
+}
+/* Main Prediction Box */
+.prediction-box {
+  background: linear-gradient(135deg, #007bff 30%, #0056b3 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  h3,
+  h4 {
+    font-size: 22px;
+  }
+}
+
+/* Button Styling */
+#know-more-btn {
+  background: #ffeb3b;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+#know-more-btn:hover {
+  background: #ffc107;
+}
+
+/* Disease Info Container */
+.disease-info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.4s ease-out;
+}
+
+/* Styling for Individual Information Boxes */
+.info-box {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  h5 {
+    font-size: 20px;
+  }
+}
+
+/* Remedy Box with Yellow Highlight */
+/* .remedy-box {
+  background: #ffeb3b;
+  font-weight: bold;
+} */
+/* Initially Hidden */
+.hidden {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: width 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.expanded {
+  max-height: 500px; /* Adjust according to content */
+  opacity: 1;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Fade-in and Slide-down */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInSlide 0.4s ease-in-out;
+}
+
+/* Fade-out */
+@keyframes fadeOutSlide {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.fade-out {
+  animation: fadeOutSlide 0.4s ease-in-out;
+}
+/* Apply transition for smooth hover effect */
+.file-upload-wrapper::before,
+.file-upload-wrapper::after {
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the upload text */
+.file-upload-wrapper:hover::before {
+  background: green;
+  color: white; /* Change text color to white for contrast */
+}
+
+.file-upload-wrapper:hover::after {
+  background-color: green; /* Change the text color to green when hovering */
+}
+footer {
+  text-align: center;
+  padding: 0.8rem 0rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(54, 69, 79, 1);
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    /* margin-top: 1rem; */
+  }
+  p {
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+}
+#webcam,
+#capture,
+#canvas {
+  display: none;
+}

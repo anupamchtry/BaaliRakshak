@@ -1,0 +1,20 @@
+{
+  "Early Blight": {
+    "meaning": "Early blight is a fungal disease that affects potato plants, causing dark brown lesions on the leaves and stems",
+    "causes": "Caused by the fungus <i>Alternaria solani</i> under warm, moist conditions.",
+    "symptoms": "Dark, sunken spots on leaves and stems. Older leaves are affected first.",
+    "remedy": "Can be minimized by maintaining optimum growing conditions, including proper fertilization, irrigation, and management of other pests"
+  },
+  "Healthy": {
+    "meaning": "Healthy potato plant without any disease.",
+    "causes": "No disease present.",
+    "symptoms": "Normal plant appearance, with no unusual spots or wilting.",
+    "remedy": "No remedy required."
+  },
+  "Late Blight": {
+    "meaning": "Late blight refers to a serious fungal disease which can rapidly destroy leaves, stems, and tubers, often appearing later in the growing season.",
+    "causes": "Caused by the fungus <i>Phytophthora infestans</i> under cool, wet conditions.",
+    "symptoms": "Water-soaked lesions on leaves and stems, dark brown lesions on fruits.",
+    "remedy": "Can be treated with fungicides, proper harvesting and storage practices, and eliminating volunteer potatoes"
+  }
+}

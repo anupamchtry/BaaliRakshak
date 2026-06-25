@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Crop Disease Prediction</title>
+  </head>
+  <body>
+    <section id="body">
+      <div class="navbar">
+        <h1 class="container1">
+          <h2>Wheat Disease Prediction</h2>
+        </h1>
+        <button id="translateButton" onclick="alert('Still in development')">
+          Translate
+        </button>
+      </div>
+      <section id="section">
+        <div class="form-box">
+          <form
+            id="uploadForm"
+            action="/predict"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="file-upload-wrapper" data-text="Upload your image!">
+              <input
+                name="file"
+                type="file"
+                class="file-upload-field"
+                id="fileInput"
+              />
+            </div>
+            <br />
+            <div class="btn">
+              <a
+                href="#"
+                class="btn"
+                onclick="document.getElementById('uploadForm').submit(); return false;"
+              >
+                <span>Predict</span>
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <!-- PYTHON -->
+        <div
+          class="app {% if image_path %}app-show{% endif %} {% if predicted_label == 'Healthy' %}healthy-bg{% else %}disease-bg{% endif %}"
+          id="py"
+        >
+          {% if image_path %}
+
+          <!-- Uploaded Image Section -->
+          <div class="image-section">
+            <h3 class="app-head">Uploaded Image:</h3>
+            <img
+              src="{{ image_path }}"
+              alt="Uploaded Image"
+              width="400"
+              height="400"
+            />
+          </div>
+
+          <!-- Prediction & Confidence Section -->
+          <div class="prediction-box">
+            <h3 class="predicted">
+              <span>Predicted Label: </span>{{ predicted_label }}
+            </h3>
+            <h4 class="confidence">
+              <span>Confidence: </span>{{ confidence }}%
+            </h4>
+            <button id="know-more-btn">Know More</button>
+          </div>
+
+          <!-- Disease Information Sections (Initially Hidden) -->
+          {% if disease_details %}
+          <div class="disease-info hidden" id="disease-info">
+            <div class="info-box">
+              <h5>Meaning:</h5>
+              <p>{{ disease_details['meaning'] | safe }}</p>
+            </div>
+            <div class="info-box">
+              <h5>Causes:</h5>
+              <p>{{ disease_details['causes'] | safe }}</p>
+            </div>
+            <div class="info-box">
+              <h5>Symptoms:</h5>
+              <p>{{ disease_details['symptoms'] | safe }}</p>
+            </div>
+            <div class="info-box remedy-box">
+              <h5>Remedy:</h5>
+              <p>{{ disease_details['remedy'] | safe }}</p>
+            </div>
+          </div>
+          {% else %}
+          <p class="no-details">
+            No disease details available for this prediction.
+          </p>
+          {% endif %} {% endif %}
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+      </section>
+    </section>
+    <footer>
+      <h2>BaliRakshak Team &copy; All rights reserved; 2025</h2>
+      <p>[Not for commercial purpose]</p>
+      <p>[Dataset reference: Kaggle]</p>
+    </footer>
+    <script>
+      // Function to trigger alert if confidence is below 80%
+      document.addEventListener("DOMContentLoaded", function () {
+        var confidence = {{ confidence }}; // This should get the confidence value from the server
+
+        if (confidence < 80) {
+          // Alert message when confidence is low
+          alert("Low Confidence: The prediction might be inaccurate due to factors like incorrect crop photo, improper background, or lower resolution. Please upload a clearer image for better results.");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Crop Disease Detection</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <h1 class="container1">
+          <a href="/">CROP DISEASE DETECTION</a>
+        </h1>
+      </nav>
+
+      <div class="content">
+        <h1 class="large text-light">BaliRakshak</h1>
+        <p class="text-light home-p">Identify diseases in your crops.</p>
+        <a href="#main" class="button text-red primary medium glow-on-hover"
+          >IDENTIFY NOW</a
+        >
+      </div>
+    </header>
+    <div id="main">
+      <h1 class="mainh1">Image Prediction</h1>
+      <form
+        action="/predict"
+        method="post"
+        enctype="multipart/form-data"
+        class="img-insert cnt"
+      >
+        <label for="fileinput" class="form-input">Upload an image</label><br />
+        <input type="file" id="file" name="file" class="form-control" /><br />
+        <button type="submit" class="button1">Predict</button>
+      </form>
+    </div>
+    {% if image_path %}
+    <div class="prediction-result">
+      <img
+        src="{{ image_path }}"
+        alt="Uploaded Image"
+        class="img-fluid rounded"
+      />
+      <p class="mt-3">Predicted Label: {{ predicted_label }}</p>
+      <p>Confidence: {{ confidence }}%</p>
+    </div>
+    {% endif %}
+  </body>
+</html>

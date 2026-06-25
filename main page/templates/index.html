@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Crop Disease Prediction</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://kit.fontawesome.com/fadc0d2ab3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <h1 class="container1">
+          <a href="/main page/index.html">CROP DISEASE PREDICTION</a>
+        </h1>
+        <button id="translateButton" onclick="alert('Still in development')">Translate</button>
+        <a href=" http://127.0.0.1:5005" id="upcoming">Upcoming</a>
+      </nav>
+
+      <div class="content">
+        <h1 class="large text-light">BaliRakshak</h1>
+        <p class="text-light home-p">Revolutionize crop management—quickly spot diseases, stop outbreaks, and safeguard your harvest, all with a simple leaf image.</p>
+        <a href="#crops" class="button text-red primary medium glow-on-hover"
+          >PREDICT NOW</a
+        >
+      </div>
+    </header>
+    <section id="crops">
+      <h2>Choose Crop</h2>
+      <div class="crop-container container">
+        <div class="crop-type p1">
+          <div class="img-container">
+            <img src="{{ url_for('static', filename='imgs/p1.jpeg') }}" alt="potato" />
+
+            <div class="img-content">
+              <h3>Potato</h3>
+              <a href="http://localhost:5001/"" class="btn-one" target="_blank">Predict </a>
+            </div>
+          </div>
+        </div>
+        <div class="crop-type p2">
+          <div class="img-container">
+            <img src="{{ url_for('static', filename='imgs/p2.jpg') }}" alt="Tomato" />
+            <div class="img-content">
+              <h3>Tomato</h3>
+              <a href="http://localhost:5002/" class="btn-one" target="_blank"> Predict </a>
+            </div>
+          </div>
+        </div>
+        <div class="crop-type p3">
+          <div class="img-container">
+            <img src="{{ url_for('static', filename='imgs/p3.jpg') }}" alt="Wheat" />
+            <div class="img-content">
+              <h3>Wheat</h3>
+              <a
+                href="http://localhost:5003/"
+                class="btn-one"
+                target="_blank"
+                >Predict</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="crop-container2">
+        <div class="crop-type p3">
+          <div class="img-container2">
+            <img src="{{ url_for('static', filename='imgs/p4.jpg') }}" alt="Coming Soon" />
+            <div class="img-content2">
+              <h3>Comming Soon</h3>
+              <!-- <a
+                href="http://localhost:5003/"
+                class="btn-one"
+                target="_blank"
+                >Predict</a -->
+              
+            </div>
+          </div>
+        </div>
+        <div class="crop-type p3">
+          <div class="img-container2">
+            <img src="{{ url_for('static', filename='imgs/p5.jpg') }}" alt="Coming Soon" />
+            <div class="img-content2">
+              <h3>Comming Soon</h3>
+              <!-- <a
+                href="http://localhost:5003/"
+                class="btn-one"
+                target="_blank"
+                >Predict</a
+              > -->
+            </div>
+          </div>
+        </div>
+        <div class="crop-type p3">
+          <div class="img-container2">
+            <img src="{{ url_for('static', filename='imgs/p6.jpg') }}" alt="Coming Soon" />
+            <div class="img-content2">
+              <h3>Comming Soon</h3>
+              <!-- <a
+                href="http://localhost:5003/"
+                class="btn-one"
+                target="_blank"
+                >Predict</a
+              > -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="more-crops">
+      <div class="upcoming">
+        <h2>More Crops Coming Soon!</h2>
+        <p>We are constantly working to expand our crop database. Stay tuned for new additions!</p>
+      </div>
+    </section>
+    <footer>
+      <h2>BaliRakshak Team &copy; All rights reserved; 2025</h2>
+       <p> [Not for commercial purpose]</p>
+       <p>[Dataset reference: Kaggle]</p> 
+    </footer>
+
+
+
+
+    <script>
+$(document).ready(function () {
+  $("a").on("click", function (event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      // Get the position of the element you want to scroll to
+      var targetOffset = $(hash).offset().top;
+
+      // Set the scroll position to 80px from the top
+      var scrollToPosition = targetOffset - 80;
+
+      // Scroll to the desired position
+      $("html, body").animate(
+        {
+          scrollTop: scrollToPosition,
+        },
+        800,
+        function () {
+          window.location.hash = hash;
+        }
+      );
+    }
+  });
+});
+
+
+    </script>
+  </body>
+</html>
